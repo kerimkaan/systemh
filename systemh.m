@@ -4,7 +4,7 @@ clear all;
 % The tool calculates the friction (head) losses in SI Units
 % Darcy-Weisbach friction factor was calculated by a function whose using the Colebrook-White algorithm
 % This file is written in Turkish, it will be completed soon and translated into English.
-% Kerim Kaan Dönmez, github.com/kerimkaan
+% Copyright (c) 2018 Kerim Kaan Dönmez [github.com/kerimkaan]
 
 % Verilenler
 g = 9.81;
@@ -74,7 +74,7 @@ hb_e = f_e*(l_e/d_e)*((u_emme^2)/(2*g)); % Emme boru sürtünme kayýplarý
 hl_e = ((dirsek_e*k_d)+(surgu_e*k_sv)+(konik_e*k_red)+(checkvalf_e*k_cv))*((u_emme^2)/(2*g)); % Emme yerel
 
     % Basma hattý boru sürtünme ve lokal kayýplarý
-if re_b > 10000;
+if re_b > 10000
     % [BASMA] Colebrook Denklemi ile friction factor deðerinin bulunmasý
     f_b = moody(eps/d_b,re_b);
 else
