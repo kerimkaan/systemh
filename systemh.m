@@ -71,7 +71,7 @@ else
 end
 
 hb_e = f_e*(l_e/d_e)*((u_emme^2)/(2*g)); % Emme boru sürtünme kayýplarý
-hl_e = ((dirsek_e*k_d)+(surgu_e*k_sv)+(konik_e*k_red)+(checkvalf_e*k_cv))*((u_emme^2)/(2*g)) % Emme yerel
+hl_e = ((dirsek_e*k_d)+(surgu_e*k_sv)+(konik_e*k_red)+(checkvalf_e*k_cv))*((u_emme^2)/(2*g)); % Emme yerel
 
     % Basma hattý boru sürtünme ve lokal kayýplarý
 if re_b > 10000;
@@ -82,7 +82,7 @@ else
 end
 
 hb_b = f_b*(l_b/d_b)*((u_basma^2)/(2*g)); % Basma boru sürtünme kayýplarý
-hl_b = ((dirsek_b*k_d)+(surgu_b*k_sv)+(konik_b*k_red)+(checkvalf_b*k_cv))*((u_basma^2)/(2*g)) % Basma yerel
+hl_b = ((dirsek_b*k_d)+(surgu_b*k_sv)+(konik_b*k_red)+(checkvalf_b*k_cv))*((u_basma^2)/(2*g)); % Basma yerel
 
 % SÝSTEMÝN MANOMETRÝK YÜKSELÝÐÝ VE GEREKLÝ GÜÇ
 
@@ -93,11 +93,11 @@ p_mil_kw = p_mil/1000;
 fprintf('Sistemin Manometrik yüksekliði (m): %.2f \n', h_total);
 fprintf('Gerekli mil gücü (W): %.2f \n', p_mil);
 fprintf('Gerekli mil gücü (kW): %.2f \n', p_mil_kw);
-cat=categorical({'Toplam H','Basýnç H','Kinetik H','Statik H','Emme Boru H','Emme Yerel H','Basma Boru H','Basma Yerel H'})
+cat=categorical({'Toplam H','Basýnç H','Kinetik H','Statik H','Emme Boru H','Emme Yerel H','Basma Boru H','Basma Yerel H'});
 subplot(2,1,1)
 bar(cat,[h_total,h1,h2,h3,hb_e,hl_e,hb_b,hl_e])
 title('Head Miktarlarý')
 subplot(2,1,2)
-cat1=categorical({'Toplam H','Gerekli kW','Pompa Verimi'})
+cat1=categorical({'Toplam H','Gerekli kW','Pompa Verimi'});
 bar(cat1,[h_total,p_mil_kw,n1])
 title('H/P/N Grafiði')
